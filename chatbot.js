@@ -17,7 +17,12 @@ if(fs.existsSync(SESSION_FILE_PATH)) {
 }
 
 const client = new Client({
-    session: session_data
+    session: session_data,
+    puppeteer: {
+        args: [
+            '--no-sandbox',
+        ],
+    }
 });
 
 // Event: Triggers when a QR code is generated. 
