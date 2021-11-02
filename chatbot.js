@@ -47,14 +47,14 @@ client.on('ready', () => {
 
 // Event: Async Triggers when client is ready and first connected.
 // Action: Starts a cronjob that sends a message.
-client.on('ready', async() => {
-    cron.schedule('* * * * *', async () => {
-        client.sendMessage(ID_DROPBOX, 'Mensaje cada 1 minuto');
-    });
-    cron.schedule('*/2 * * * *', async () => {
-        client.sendMessage(ID_DROPBOX, 'Cron en el segundo minuto');
-    });
-});
+// client.on('ready', async() => {
+//     cron.schedule('* * * * *', async () => {
+//         client.sendMessage(ID_DROPBOX, 'Mensaje cada 1 minuto');
+//     });
+//     cron.schedule('*/2 * * * *', async () => {
+//         client.sendMessage(ID_DROPBOX, 'Cron en el segundo minuto');
+//     });
+// });
 
 // Event: Triggers when client is authenticated.
 // Action: Save the session object in a local pathfile
