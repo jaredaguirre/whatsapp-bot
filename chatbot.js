@@ -2,6 +2,14 @@ const { Client } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const fs = require('fs');
 var cron = require('node-cron');
+const express = require('express')
+const app = express()
+
+// Some GET response to make Heroku work...
+app.get('/', function (req, res) {
+  res.send('Hi! This is the GET response!')
+})
+app.listen(process.env.PORT)
 
 // Common Chat IDs
 const ID_ME = '5491121573752@c.us'

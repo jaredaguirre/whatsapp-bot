@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/jaredaguirre/whatsapp-bot#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "node-cron": "^3.0.0",
     "qrcode-terminal": "^0.12.0",
