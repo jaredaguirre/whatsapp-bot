@@ -14,7 +14,7 @@ app.listen(process.env.PORT)
 // Common Chat IDs
 const ID_ME = '5491121573752@c.us'
 const ID_DROPBOX = '5491121573752-1541375978@g.us'
-const ID_AMIGOS = 'XXX'
+const ID_AMIGOS = '5491130092739-1407104749@g.us'
 
 // Path where the session data will be stored
 const SESSION_FILE_PATH = './session.json';
@@ -50,25 +50,25 @@ client.on('ready', () => {
 // Action: Starts a cronjob that sends a message.
 client.on('ready', async() => {
     cron.schedule('0 10 28 12 *', async () => {
-        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Jaré!');
+        client.sendMessage(ID_AMIGOS, 'Brace Yourselves! Hoy cumple Jaré!');
     });
     cron.schedule('* 10 3 8 *', async () => {
-        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Mati!');
+        client.sendMessage(ID_AMIGOS, 'Brace Yourselves! Hoy cumple Mati!');
     });
     cron.schedule('* 10 30 10 *', async () => {
-        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Enzo!');
+        client.sendMessage(ID_AMIGOS, 'Brace Yourselves! Hoy cumple Enzo!');
     });
     cron.schedule('* 10 17 9 *', async () => {
-        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Gino!');
+        client.sendMessage(ID_AMIGOS, 'Brace Yourselves! Hoy cumple Gino!');
     });
     cron.schedule('* 10 17 8 *', async () => {
-        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Facu!');
+        client.sendMessage(ID_AMIGOS, 'Brace Yourselves! Hoy cumple Facu!');
     });
     cron.schedule('* 10 19 6 *', async () => {
-        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Ferni!');
+        client.sendMessage(ID_AMIGOS, 'Brace Yourselves! Hoy cumple Ferni!');
     });
     cron.schedule('* 10 3 5 *', async () => {
-        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple el Lea!');
+        client.sendMessage(ID_AMIGOS, 'Brace Yourselves! Hoy cumple el Lea!');
     });
 });
 
