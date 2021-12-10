@@ -14,6 +14,7 @@ app.listen(process.env.PORT)
 // Common Chat IDs
 const ID_ME = '5491121573752@c.us'
 const ID_DROPBOX = '5491121573752-1541375978@g.us'
+const ID_AMIGOS = 'XXX'
 
 // Path where the session data will be stored
 const SESSION_FILE_PATH = './session.json';
@@ -47,14 +48,29 @@ client.on('ready', () => {
 
 // Event: Async Triggers when client is ready and first connected.
 // Action: Starts a cronjob that sends a message.
-// client.on('ready', async() => {
-//     cron.schedule('* * * * *', async () => {
-//         client.sendMessage(ID_DROPBOX, 'Mensaje cada 1 minuto');
-//     });
-//     cron.schedule('*/2 * * * *', async () => {
-//         client.sendMessage(ID_DROPBOX, 'Cron en el segundo minuto');
-//     });
-// });
+client.on('ready', async() => {
+    cron.schedule('0 10 28 12 *', async () => {
+        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Jaré!');
+    });
+    cron.schedule('* 10 3 8 *', async () => {
+        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Mati!');
+    });
+    cron.schedule('* 10 30 10 *', async () => {
+        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Enzo!');
+    });
+    cron.schedule('* 10 17 9 *', async () => {
+        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Gino!');
+    });
+    cron.schedule('* 10 17 8 *', async () => {
+        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Facu!');
+    });
+    cron.schedule('* 10 19 6 *', async () => {
+        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple Ferni!');
+    });
+    cron.schedule('* 10 3 5 *', async () => {
+        client.sendMessage(ID_DROPBOX, 'Brace Yourselves! Hoy cumple el Lea!');
+    });
+});
 
 // Event: Triggers when client is authenticated.
 // Action: Save the session object in a local pathfile
@@ -88,7 +104,10 @@ client.on('message', msg => {
         let hours = date_ob.getHours();         // current hours
         let minutes = date_ob.getMinutes();     // current minutes
         let seconds = date_ob.getSeconds();     // current seconds
-        msg.reply(year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
+
+        // Prints in DD/MM/YY format:
+
+        msg.reply(date + "/" + month + "/" + year + " " + hours + ":" + minutes + ":" + seconds);
     }
 })
 
@@ -97,6 +116,7 @@ client.on('message', async msg=>{
 
     if(msg.body === '/sendid'){     //Captures on console the chat ID where the message is coming from
         console.log(msg.from)
+        msg.reply(msg.from)
     }
 })
 
