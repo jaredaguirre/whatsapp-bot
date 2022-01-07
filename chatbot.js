@@ -7,7 +7,7 @@ const app = express()
 
 // Some GET response to make Heroku work...
 app.get('/', function (req, res) {
-  res.send('Hi! This is the GET response!')
+  res.send('Hi! This Whatsapp Bot is Adorable!')
 })
 app.listen(process.env.PORT)
 
